@@ -53,7 +53,7 @@
                     <label for="chk1"><i class="fa fa-bars"></i></label>
             </div> -->
     </header>
-    <form action="/user/signin" method="POST" class="form" id="form-2">
+    <form action="/user/dangky" method="POST" class="form" id="form-2">
           <h3 class="heading">Đăng ký</h3>
           
           <div class="form-group">
@@ -79,7 +79,7 @@
           </div> 
           <button class="form-submit">Đăng ký</button>
           
-            <p class="desc">Already have an acount? <a href="#"> Login</a>❤️</p>
+            <p class="desc">Already have an acount? <a href="/user/login"> Login</a>❤️</p>
     </form>       
     <script src="../js/app.js"></script>
    

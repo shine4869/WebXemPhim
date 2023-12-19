@@ -41,11 +41,9 @@ class TaiKhoan {
         $matkhau = $this->mysqli->real_escape_string($matkhau);
         $sodt = $this->mysqli->real_escape_string($sodt);
     
-        $hashedPassword = password_hash($matkhau, PASSWORD_DEFAULT);
     
-        return $this->mysqli->query("INSERT INTO taikhoan (TaiKhoan, MatKhau, SoDienThoai) VALUES ('$tendn', '$hashedPassword', '$sodt')");
-    
-    
+        return $this->mysqli->query("INSERT INTO taikhoan (TaiKhoan, MatKhau, SoDienThoai) VALUES ('$tendn', '$matkhau', '$sodt')");
+        
     }
 }
 

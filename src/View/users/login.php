@@ -66,7 +66,7 @@
             <span class="form-message"></span>
           </div> 
           <button class="form-submit">Đăng nhập</button>
-           <p class="desc">Don't have a account? <a  href="#">Signup</a> ❤️</p>
+           <p class="desc">Don't have a account? <a  href="/user/register">Signup</a> ❤️</p>
     </form>       
     <script src="../js/app.js"></script>
     <?php

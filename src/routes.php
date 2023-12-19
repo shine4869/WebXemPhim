@@ -20,6 +20,8 @@ $router->addRoute('/\/user\/login/', [new TaiKhoanController(), 'login']);
 $router->addRoute('/\/user\/register/', [new TaiKhoanController(), 'register']);
 
 $router->addRoute('/\/user\/DangNhap/', [new DangNhapController(), 'DangNhap']);
+$router->addRoute('/\/user\/dangky/', [new DangKyController(), 'Dangky']);
+
 
 
 $router->addRoute('/\/user\/logout/', [new DangXuatController(), 'logout']);
