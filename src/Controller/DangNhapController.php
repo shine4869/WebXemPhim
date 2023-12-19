@@ -16,10 +16,10 @@ class DangNhapController {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tendn = $_POST['tendn'];
             $password = $_POST['matkhau'];
-            $tk= new TaiKhoan();
-            $user= $tk->GetTaiKhoan($tendn);
-           
-            if ($user && password_verify($password, $user['MatKhau'])) {
+            
+            
+            $user = (new TaiKhoan())->LayTaiKhoanBangten($tendn);
+            if ($user && hash_equals($password, $user['MatKhau'])) {
                 // User authenticated, save user to session
                 session_start();
                 $_SESSION['currentUser'] = $user;

@@ -22,28 +22,18 @@ class TaiKhoan {
     }
 
 
-    public function GetTaiKhoan($tendn)
+    public function KiemTraDangNhap($tendn, $password)
     {
         $tendn = $this->mysqli->real_escape_string($tendn);
-        
-        // Sử dụng Prepared Statement
-    $query = $this->mysqli->prepare("SELECT * FROM taikhoan WHERE TaiKhoan = ?");
-    $query->bind_param("s", $tendn);
-
-    if ($query->execute()) {
-        $result = $query->get_result();
-
-        // Kiểm tra xem có dữ liệu hay không
-        if ($result->num_rows > 0) {
-            return $result->fetch_assoc();
-        } else {
-            // Xử lý trường hợp không tìm thấy tài khoản
-            return null;
-        }
-    } else {
-        // Xử lý trường hợp câu truy vấn không thành công
-        return null;
+        $result = $this->mysqli->query("SELECT * FROM taikhoan WHERE TaiKhoan = '$tendn' and MatKhau = '$password' ");
+        return $result->fetch_assoc();
     }
+
+    public function LayTaiKhoanBangten($tendn)
+    {
+        $tendn = $this->mysqli->real_escape_string($tendn);
+        $result = $this->mysqli->query("SELECT * FROM taikhoan WHERE TaiKhoan = '$tendn'");
+        return $result->fetch_assoc();
     }
 
     public function Dangky($tendn, $matkhau, $sodt){
