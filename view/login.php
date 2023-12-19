@@ -53,22 +53,30 @@
                     <label for="chk1"><i class="fa fa-bars"></i></label>
             </div> -->
     </header>
-    <form action="" method="POST" class="form" id="form-2">
+    <form action="/user/login" method="POST" class="form" id="form-2">
           <h3 class="heading">Đăng nhập</h3>
           <div class="form-group">
             <label for="usename" class="form-label">Tên đăng nhập</label>
-            <input id="usename" name="usename" type="text" placeholder="Nhập tên đăng nhập" class="form-control">
+            <input id="usename" name="tendn" type="text" placeholder="Nhập tên đăng nhập" class="form-control">
             <span class="form-message"></span>
           </div>
           <div class="form-group">
             <label for="password" class="form-label">Mật khẩu</label>
-            <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+            <input id="password" name="matkhau" type="password" placeholder="Nhập mật khẩu" class="form-control">
             <span class="form-message"></span>
           </div> 
           <button class="form-submit">Đăng nhập</button>
            <p class="desc">Don't have a account? <a  href="#">Signup</a> ❤️</p>
     </form>       
     <script src="../js/app.js"></script>
-   
+    <?php
+    session_start();
+
+    if(isset($_SESSION['flash_message'])) {
+        $message = $_SESSION['flash_message'];
+        unset($_SESSION['flash_message']);
+        echo $message . '<br>';
+    }
+    ?>
 </body>
 </html>

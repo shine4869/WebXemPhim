@@ -20,11 +20,11 @@ class TaiKhoan {
     }
 
 
-    public function GetTaiKhoan($tendn, $matkhau)
+    public function GetTaiKhoan($tendn)
     {
         $tendn = $this->mysqli->real_escape_string($tendn);
-        $matkhau = $this->mysqli->real_escape_string($matkhau);
-        $result = $this->mysqli->query("SELECT * FROM taikhoan WHERE TaiKhoan = $tendn and MatKhau = $matkhau");
+        
+        $result = $this->mysqli->query("SELECT * FROM taikhoan WHERE TaiKhoan = $tendn ");
 
         return $result->fetch_assoc();
     }
@@ -39,29 +39,6 @@ class TaiKhoan {
         return $this->mysqli->query("INSERT INTO taikhoan (TaiKhoan, MatKhau, SoDienThoai) VALUES ('$tendn', '$hashedPassword', '$sodt')");
     
     
-    }
-    public function DangNhap($tendn, $matkhau){
-        $tendn = $this->mysqli->real_escape_string($tendn);
-        $matkhau = $this->mysqli->real_escape_string($matkhau);
-        // Kiểm tra xem tên đăng nhập có tồn tại trong cơ sở dữ liệu hay không
-    $result = $this->mysqli->query("SELECT * FROM taikhoan WHERE TaiKhoan = '$tendn'");
-    if ($result->num_rows == 1) {
-        // Tên đăng nhập tồn tại, kiểm tra mật khẩu
-        $row = $result->fetch_assoc();
-        $hashedPassword = $row['MatKhau'];
-
-        if (password_verify($matkhau, $hashedPassword)) {
-            // Mật khẩu hợp lệ, có thể thực hiện các hành động sau khi đăng nhập thành công
-            // Ví dụ: Lưu thông tin đăng nhập vào phiên làm việc
-            // $_SESSION['user_id'] = $row['ID'];
-
-            return true; // Đăng nhập thành công
-        } else {
-            return false; // Sai mật khẩu
-        }
-    } else {
-        return false; // Tên đăng nhập không tồn tại
-    }        
     }
 }
 

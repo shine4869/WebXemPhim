@@ -1,7 +1,7 @@
 <?php
 function view($view, $data = [])
 {   
-  $file = APPROOT . '\src\View' . '\\' . $view . '.php';
+  $file = APPROOT . '\view' . '\\' . $view . '.php';
   // Check for view file
   //echo 'file: ' . $file;
   if (is_readable($file))

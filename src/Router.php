@@ -1,6 +1,6 @@
 <?php
 namespace App;
-use App\Controller\UserController;
+
 
 class Router {
     private $routes = [];

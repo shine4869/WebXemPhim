@@ -53,28 +53,28 @@
                     <label for="chk1"><i class="fa fa-bars"></i></label>
             </div> -->
     </header>
-    <form action="" method="POST" class="form" id="form-2">
+    <form action="/user/signin" method="POST" class="form" id="form-2">
           <h3 class="heading">Đăng ký</h3>
           
           <div class="form-group">
             <label for="usename" class="form-label">Tên đăng nhập</label>
-            <input id="usename" name="usename" type="text" placeholder="Nhập tên đăng nhập" class="form-control">
+            <input id="usename" name="tendn" type="text" placeholder="Nhập tên đăng nhập" class="form-control">
             <span class="form-message"></span>
           </div>
           <div class="form-group">
-            <label for="usename" class="form-label">Số điện thoại</label>
-            <input id="usename" name="usename" type="text" placeholder="Số điện thoại" class="form-control">
+            <label for="sodienthoai" class="form-label">Số điện thoại</label>
+            <input id="sodienthoai" name="sodt" type="text" placeholder="Số điện thoại" class="form-control">
             <span class="form-message"></span>
           </div>
   
           <div class="form-group">
             <label for="password" class="form-label">Nhập mật khẩu</label>
-            <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+            <input id="password" name="matkhau" type="password" placeholder="Nhập mật khẩu" class="form-control">
             <span class="form-message"></span>           
           </div> 
           <div class="form-group">
             <label for="password" class="form-label">Nhập lại mật khẩu</label>
-            <input id="password" name="password" type="password" placeholder="Nhập lại mật khẩu" class="form-control">
+            <input id="password" name="matkhau2" type="password" placeholder="Nhập lại mật khẩu" class="form-control">
             <span class="form-message"></span>           
           </div> 
           <button class="form-submit">Đăng ký</button>
