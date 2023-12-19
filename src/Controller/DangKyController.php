@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use TaiKhoan ;
+use App\Model\TaiKhoan ;
 
 class DangKyController {
     
@@ -21,7 +21,7 @@ class DangKyController {
             if ($tk) {
                 // Authentication failed, redirect to signin.php
                 $_SESSION['flash_message'] = "ten dang nhap khong hop le";
-                header("Location: ../user/signin");
+                header("Location: ../view/signin");
                 exit();
                 
             } else {
@@ -33,13 +33,13 @@ class DangKyController {
         
                     // Redirect to index.php
                     $_SESSION['flash_message'] = "Dang ky thanh cong";
-                    header("Location: ../user/index");
+                    header("Location: ../view/index");
                     exit();
                 }
                 else{
                     // Redirect to index.php
                     $_SESSION['flash_message'] = "xac nhan mat khau không dung";
-                    header("Location: ../user/index");
+                    header("Location: ../view/signin");
                     exit();
                 }
                 

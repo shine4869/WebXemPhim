@@ -1,7 +1,9 @@
 <?php
+namespace App\Model;
 
 class TaiKhoan {
     private $mysqli;
+
     public function __construct()
     {
         // Replace these values with your actual database configuration
@@ -24,9 +26,24 @@ class TaiKhoan {
     {
         $tendn = $this->mysqli->real_escape_string($tendn);
         
-        $result = $this->mysqli->query("SELECT * FROM taikhoan WHERE TaiKhoan = $tendn ");
+        // Sử dụng Prepared Statement
+    $query = $this->mysqli->prepare("SELECT * FROM taikhoan WHERE TaiKhoan = ?");
+    $query->bind_param("s", $tendn);
 
-        return $result->fetch_assoc();
+    if ($query->execute()) {
+        $result = $query->get_result();
+
+        // Kiểm tra xem có dữ liệu hay không
+        if ($result->num_rows > 0) {
+            return $result->fetch_assoc();
+        } else {
+            // Xử lý trường hợp không tìm thấy tài khoản
+            return null;
+        }
+    } else {
+        // Xử lý trường hợp câu truy vấn không thành công
+        return null;
+    }
     }
 
     public function Dangky($tendn, $matkhau, $sodt){

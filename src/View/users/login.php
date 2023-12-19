@@ -44,8 +44,8 @@
                         </li>
 
                         <li><a href="#">Lịch Sử</a></li>
-                        <li><a href="#"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
-                        <li><a href="#"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
+                        <li><a href="/user/login"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
+                        <li><a href="/user/register"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
                         <!-- <li><a href="#"><i class="fa fa-user"></i> User</a></li> -->
 
             </ul>
@@ -53,36 +53,30 @@
                     <label for="chk1"><i class="fa fa-bars"></i></label>
             </div> -->
     </header>
-    <form action="/user/signin" method="POST" class="form" id="form-2">
-          <h3 class="heading">Đăng ký</h3>
-          
+    <form action="/user/DangNhap" method="POST" class="form" id="form-2">
+          <h3 class="heading">Đăng nhập</h3>
           <div class="form-group">
             <label for="usename" class="form-label">Tên đăng nhập</label>
             <input id="usename" name="tendn" type="text" placeholder="Nhập tên đăng nhập" class="form-control">
             <span class="form-message"></span>
           </div>
           <div class="form-group">
-            <label for="sodienthoai" class="form-label">Số điện thoại</label>
-            <input id="sodienthoai" name="sodt" type="text" placeholder="Số điện thoại" class="form-control">
-            <span class="form-message"></span>
-          </div>
-  
-          <div class="form-group">
-            <label for="password" class="form-label">Nhập mật khẩu</label>
+            <label for="password" class="form-label">Mật khẩu</label>
             <input id="password" name="matkhau" type="password" placeholder="Nhập mật khẩu" class="form-control">
-            <span class="form-message"></span>           
+            <span class="form-message"></span>
           </div> 
-          <div class="form-group">
-            <label for="password" class="form-label">Nhập lại mật khẩu</label>
-            <input id="password" name="matkhau2" type="password" placeholder="Nhập lại mật khẩu" class="form-control">
-            <span class="form-message"></span>           
-          </div> 
-          <button class="form-submit">Đăng ký</button>
-          
-            <p class="desc">Already have an acount? <a href="#"> Login</a>❤️</p>
+          <button class="form-submit">Đăng nhập</button>
+           <p class="desc">Don't have a account? <a  href="#">Signup</a> ❤️</p>
     </form>       
     <script src="../js/app.js"></script>
-   
-</body>
+    <?php
+    session_start();
 
+    if(isset($_SESSION['flash_message'])) {
+        $message = $_SESSION['flash_message'];
+        unset($_SESSION['flash_message']);
+        echo $message . '<br>';
+    }
+    ?>
+</body>
 </html>

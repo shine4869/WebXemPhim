@@ -1,16 +1,16 @@
 <?php
 function view($view, $data = [])
 {   
-  $file = APPROOT . '\view' . '\\' . $view . '.php';
+  $file = APPROOT . '\src\View' . '\\' . $view . '.php';
   // Check for view file
   //echo 'file: ' . $file;
   if (is_readable($file))
   {
     //$users = $data;
-    if (isset($data['webxemphim'])) {
-      $films = $data['webxemphim'];
-    } else if (isset($data['webxemphim'])) {
-      $films = $data['webxemphim'];
+    if (isset($data['taikhoan'])) {
+      $taikhoan = $data['taikhoan'];
+    } else if (isset($data['taikhoan'])) {
+      $taikhoan = $data['taikhoan'];
     } else {
       echo 'The key does not exist in the array.';
     }

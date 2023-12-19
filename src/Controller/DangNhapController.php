@@ -1,7 +1,8 @@
 <?php
 namespace App\Controller;
 
-use TaiKhoan ;
+use App\Model\TaiKhoan;
+
 
 class DangNhapController {
     
@@ -15,21 +16,22 @@ class DangNhapController {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tendn = $_POST['tendn'];
             $password = $_POST['matkhau'];
-
-            $tk = (new TaiKhoan())->GetTaiKhoan($tendn);
-            if ($tk && password_verify($password, $tk['MatKhau'])) {
+            $tk= new TaiKhoan();
+            $user= $tk->GetTaiKhoan($tendn);
+           
+            if ($user && password_verify($password, $user['MatKhau'])) {
                 // User authenticated, save user to session
                 session_start();
-                $_SESSION['currentUser'] = $tk;
+                $_SESSION['currentUser'] = $user;
     
                 // Redirect to index.php
                 $_SESSION['flash_message'] = "Dang Nhap Thanh Cong";
-                header("Location: ../view/home.php");
+                header("Location: ../user/home");
                 exit();
             } else {
                 // Authentication failed, redirect to signin.php
-                $_SESSION['flash_message'] = "Login has failed";
-                header("Location: ../view/login.php");
+                $_SESSION['flash_message'] = "Dang Nhap That Bai";
+                header("Location: ../user/login");
                 exit();
             }
         }

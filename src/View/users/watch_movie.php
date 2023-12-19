@@ -44,8 +44,8 @@
                         </li>
 
                         <li><a href="#">Lịch Sử</a></li>
-                        <li><a href="#"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
-                        <li><a href="#"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
+                        <li><a href="/user/login"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
+                        <li><a href="/user/register"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
                         <!-- <li><a href="#"><i class="fa fa-user"></i> User</a></li> -->
 
             </ul>

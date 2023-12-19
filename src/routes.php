@@ -4,8 +4,8 @@ use App\Controller\DangKyController;
 use App\Controller\DangNhapController;
 use App\Controller\DangXuatController;
 use App\Router;
-use App\Controller\UserController;
-
+use App\Controller\TaiKhoanController;
+use App\Model\TaiKhoan;
 
 // Usage:
 $router = new Router();
@@ -13,8 +13,13 @@ $router = new Router();
 // Add routes
 
 
-//$router->addRoute('/\/user/', [new UserController(), 'index']);
-//$router->addRoute('/\/user\/show\/(\d+)/', [new UserController(), 'show']);
-$router->addRoute('/\/user\/login/', [DangNhapController::class, 'login']);
-$router->addRoute('/\/user\/signin/', [new DangKyController(), 'signin']);
+$router->addRoute('/\//', [new TaiKhoanController(), 'index']);
+
+
+$router->addRoute('/\/user\/login/', [new TaiKhoanController(), 'login']);
+$router->addRoute('/\/user\/register/', [new TaiKhoanController(), 'register']);
+
+$router->addRoute('/\/user\/DangNhap/', [new DangNhapController(), 'DangNhap']);
+
+
 $router->addRoute('/\/user\/logout/', [new DangXuatController(), 'logout']);
