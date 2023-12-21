@@ -15,9 +15,7 @@ class TaiKhoanController extends Controller
         $this->TaiKhoan = new TaiKhoan;
     }
 
-    public function index(){
-        $this->render('users\home', []);
-    }
+
 
     public function login(){
         //header('Location: /src/View/users/signin.php');
