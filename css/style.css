@@ -492,3 +492,6 @@ header ul li:hover .drop-menu {
   }
 }
 
+.err_message{
+      color: rgb(233, 41, 41);
+}

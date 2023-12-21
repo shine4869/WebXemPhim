@@ -45,9 +45,17 @@
 
                         <li><a href="#">Lịch Sử</a></li>
                         
-                        <li><a href="/user/login"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
-                        <li><a href="/user/register"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
-                        <!-- <li><a href="#"><i class="fa fa-user"></i> User</a></li> -->
+                        <?php 
+                        session_start();
+                            if(isset($_SESSION['currentUser'])) {
+                        ?>
+                            <li><a href="#"><i class="fa fa-user"></i> <?php echo  $_SESSION['us'] ?></a></li>
+                            <li><a href="/user/logout"><i class="fa-solid fa-right-from-bracket"></i> ĐĂNG XUẤT</a></li>
+                        <?php } else {?>
+                            <li><a href="/user/login"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
+                            <li><a href="/user/register"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
+                        <?php }?>
+    
 
             </ul>
             <!-- <div class="menu">
