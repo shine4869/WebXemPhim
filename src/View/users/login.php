@@ -16,7 +16,7 @@
 <body>
     <header>  
             
-            <div class="logo"><a href="#"><img class="" src="../img/logo.png" alt=""></a></div>
+            <div class="logo"><a href="/user/home"><img class="" src="../img/logo.png" alt=""></a></div>
             <div class="search-box">
                 <form action="">
                         <input type="text" name="search" id="srch" placeholder="Search">
@@ -53,7 +53,7 @@
                     <label for="chk1"><i class="fa fa-bars"></i></label>
             </div> -->
     </header>
-    <form action="/user/DangNhap" method="POST" class="form" id="form-2">
+    <form action="/user/DangNhap" method="POST" class="form" id="form-1">
           <h3 class="heading">Đăng nhập</h3>
           <div class="form-group">
             <label for="usename" class="form-label">Tên đăng nhập</label>
@@ -64,19 +64,23 @@
             <label for="password" class="form-label">Mật khẩu</label>
             <input id="password" name="matkhau" type="password" placeholder="Nhập mật khẩu" class="form-control">
             <span class="form-message"></span>
-          </div> 
-          <button class="form-submit">Đăng nhập</button>
+          </div>
+          <p class="err_message"id="message"></p> 
+          <button type="submit" class="form-submit">Đăng nhập</button>
            <p class="desc">Don't have a account? <a  href="/user/register">Signup</a> ❤️</p>
     </form>       
-    <script src="../js/app.js"></script>
+    <script src="../../js/app.js"></script>
     <?php
     session_start();
-
     if(isset($_SESSION['flash_message'])) {
         $message = $_SESSION['flash_message'];
         unset($_SESSION['flash_message']);
         echo $message . '<br>';
-    }
-    ?>
+        ?>
+        <script>
+            window.alert("<?php echo $message; ?>");
+        </script>
+    <?php } ?>
+    
 </body>
 </html>

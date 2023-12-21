@@ -17,40 +17,42 @@ class DangKyController {
             $matkhau = $_POST['matkhau'];
             $sodt = $_POST['sodt'];
             $matkhau2 = $_POST['matkhau2'];
-
-            $tk = (new TaiKhoan())->LayTaiKhoanBangten($tendn);
-            if ($tk) {
-                // Authentication failed, redirect to signin.php
-                $_SESSION['flash_message'] = "ten dang nhap da co";
-                header("Location: ../user/register");
-                exit();
-                
-            } else {
-                if(hash_equals($matkhau,$matkhau2)){
-                    $user = (new TaiKhoan())->Dangky($tendn,$matkhau, $sodt);
-                    if($user){
-        
-                    // Redirect to index.php
-                    $_SESSION['flash_message'] = "Dang ky thanh cong";
+            if ($tendn !== null && $matkhau !== null && $sodt !== null && $matkhau2 !== null){
+                $tk = (new TaiKhoan())->LayTaiKhoanBangten($tendn);
+                if ($tk) {
+                    // Authentication failed, redirect to signin.php
+                    $_SESSION['flash_message'] = "Tên tài khoản đã tồn tài!";
                     header("Location: ../user/register");
                     exit();
+                    
+                } else {
+                    if(hash_equals($matkhau,$matkhau2)){
+                        $user = (new TaiKhoan())->Dangky($tendn,$matkhau, $sodt);
+                        if($user){
+            
+                        // Redirect to index.php
+                        $_SESSION['flash_message'] = "Đăng ký thành công!";
+                                header("Location: ../user/register");
+                                exit();
+                        }
+                        else{
+                            $_SESSION['flash_message'] = "Dang ky that bai";
+                            header("Location: ../user/register");
+                            exit();
+                        }
+    
                     }
                     else{
-                        $_SESSION['flash_message'] = "Dang ky that bai";
+                        // Redirect to index.php
+                        //$_SESSION['flash_message'] = "Password không khớp!";
                         header("Location: ../user/register");
                         exit();
                     }
-
+                    
+                    
                 }
-                else{
-                    // Redirect to index.php
-                    $_SESSION['flash_message'] = "xac nhan mat khau không dung";
-                    header("Location: ../user/register");
-                    exit();
-                }
-                
-                
             }
+            
         }
 
         

@@ -14,9 +14,20 @@
 </head>
 
 <body>
+<?php
+    session_start();
+    if(isset($_SESSION['flash_message'])) {
+        $message = $_SESSION['flash_message'];
+        unset($_SESSION['flash_message']);
+        ?>
+        <script>
+            console.log("<?php echo $message; ?>");
+            window.alert("<?php echo $message; ?>");
+        </script>
+<?php }?> 
     <header>  
             
-            <div class="logo"><a href="#"><img class="" src="../img/logo.png" alt=""></a></div>
+            <div class="logo"><a href="/user/home"><img class="" src="../img/logo.png" alt=""></a></div>
             <div class="search-box">
                 <form action="">
                         <input type="text" name="search" id="srch" placeholder="Search">
@@ -40,7 +51,6 @@
                                     <li><a href="#">Thể loại 10</a></li>
                                     
                             </ul>
-
                         </li>
 
                         <li><a href="#">Lịch Sử</a></li>
@@ -53,6 +63,7 @@
                     <label for="chk1"><i class="fa fa-bars"></i></label>
             </div> -->
     </header>
+  
     <form action="/user/dangky" method="POST" class="form" id="form-2">
           <h3 class="heading">Đăng ký</h3>
           
@@ -74,15 +85,16 @@
           </div> 
           <div class="form-group">
             <label for="password" class="form-label">Nhập lại mật khẩu</label>
-            <input id="password" name="matkhau2" type="password" placeholder="Nhập lại mật khẩu" class="form-control">
+            <input id="confirmPassword" name="matkhau2" type="password" placeholder="Nhập lại mật khẩu" class="form-control">
             <span class="form-message"></span>           
           </div> 
-          <button class="form-submit">Đăng ký</button>
+          <p class="err_message"id="message"></p>
+          <button type="submit" class="form-submit">Đăng ký</button>
           
             <p class="desc">Already have an acount? <a href="/user/login"> Login</a>❤️</p>
     </form>       
-    <script src="../js/app.js"></script>
-   
+    <script src="../../js/app.js"></script>
+  
 </body>
 
 </html>
