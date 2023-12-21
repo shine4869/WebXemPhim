@@ -17,18 +17,32 @@ class PhimController extends Controller{
 
         $this->render('users\home', ['phim' => $phim]);
     }
-    public function showPhim($Id)
+    public function TimKiem($Id)
     {
-        // Fetch a single user by ID and display in a view
-        $phim =$this->Phim->getPhimtheoma($Id);
-        //$data = [];
-        //$data['user'] = $user;
-        //include(__DIR__ . '/../View/users/user-form.php');
-        //view('users\user-form', $data);
+        session_start();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $key = $_POST['noidungtimkiem'];
 
-        $this->render('users\detail', ['phim' => $phim]);
+            if($key != null){
+                $phim = $this->Phim->timkiemphimtheoten($key);
+                $_SESSION['currentphim'] = $phim;
+                header("Location: ../user/home");
+                exit();
+
+            }
+            else{
+                $phim =$this->Phim->getPhim();
+                $_SESSION['currentphim'] = $phim;
+                header("Location: ../user/home");
+                exit();
+            }
+        
+        }
+
+        
 
     }
+
 
 
 
