@@ -17,7 +17,6 @@ class PhimController extends Controller{
 
         $this->render('users\home', ['phim' => $phim]);
     }
-<<<<<<< HEAD
     public function TimKiem($Id)
     {
         session_start();
@@ -39,18 +38,6 @@ class PhimController extends Controller{
             }
         
         }
-
-        
-
     }
-
-
-
-=======
->>>>>>> eb83c5480e8d66f634c949f38e68eb4945d3fa9e
-
 }
-
-
-
 ?>
