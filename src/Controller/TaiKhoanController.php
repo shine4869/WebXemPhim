@@ -4,27 +4,32 @@ namespace App\Controller;
 
 use App\Model\TaiKhoan;
 use App\Controller;
-
+use App\Model\LoaiPhim;
 
 class TaiKhoanController extends Controller
 {
     private $TaiKhoan;
+    private $loai;
 
     public function __construct()
     {
         $this->TaiKhoan = new TaiKhoan;
+        $this->loai= new LoaiPhim;
     }
 
 
 
     public function login(){
         //header('Location: /src/View/users/signin.php');
-        $this->render('users\login', []);
+        $loai = $this->loai->getLoai();
+
+        $this->render('users\login', ['loai'=> $loai]);
     }
     
     public function register(){
         //header('Location: /src/View/users/signin.php');
-        $this->render('users\register', []);
+        $loai = $this->loai->getLoai();
+        $this->render('users\register', ['loai'=> $loai]);
     }
 
     public function logout(){
@@ -33,7 +38,7 @@ class TaiKhoanController extends Controller
             if(isset($_SESSION['currentUser'])){
                 unset($_SESSION['currentUser']);
                 session_destroy();
-                header("Location: ../home");
+                $this->render('users\register', []);
                 exit();
             }
         }

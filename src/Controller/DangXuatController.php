@@ -1,23 +1,29 @@
 <?php
 namespace App\Controller;
 
+use App\Controller;
+use App\Model\loaiphim;
+use App\Model\Phim;
 use TaiKhoan ;
 
-class DangXuatController {
+class DangXuatController extends Controller {
+    private $Loai;
+    private $Phim ;
     
     public function __construct(){
+        $this->Phim = new Phim();
+        $this->Loai = new LoaiPhim();
         
     }
 
     public function logout(){
-        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-            session_start();
-            if(isset($_SESSION['currentUser'])){
-                unset($_SESSION['currentUser']);
+        $phim =$this->Phim->getPhim();
+        $loai = $this->Loai->getLoai();
+        session_start();
+        if(isset($_SESSION['currentUser'])){
+            unset($_SESSION['currentUser']);
                 session_destroy();
-                header("Location: ../index");
-                exit();
-            }
+                $this->render('users\home', ['phim' => $phim, 'loai'=> $loai]);
         }
     }
 }
