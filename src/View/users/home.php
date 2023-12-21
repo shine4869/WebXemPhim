@@ -27,18 +27,11 @@
             <ul>
                         <li>
                             <a href="#"><i class="far fa-list-alt"></i> THỂ LOẠI</a>
+                            
                             <ul class="drop-menu">
-                                    <li><a href="#">Thể loại 1</a></li>
-                                    <li><a href="#">Thể loại 2</a></li>
-                                    <li><a href="#">Thể loại 3</a></li>
-                                    <li><a href="#">Thể loại 4</a></li>
-                                    <li><a href="#">Thể loại 5</a></li>
-                                    <li><a href="#">Thể loại 6</a></li>
-                                    <li><a href="#">Thể loại 7</a></li>
-                                    <li><a href="#">Thể loại 8</a></li>
-                                    <li><a href="#">Thể loại 9</a></li>
-                                    <li><a href="#">Thể loại 10</a></li>
-                                    
+                            <?php foreach ($loai as $Loai){?> 
+                                    <li><a href="#"><?php echo $Loai["TenLoai"]?></a></li>
+                            <?php }?>         
                             </ul>
 
                         </li>
