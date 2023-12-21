@@ -37,9 +37,7 @@ class Phim{
     public function timkiemphimtheoten($key){
         $key = $this->mysqli->real_escape_string($key);
         $result = $this->mysqli->query("SELECT * FROM phim WHERE TenPhim LIKE '%$key%'");
-
         return $result->fetch_assoc();
-
     }
 
 

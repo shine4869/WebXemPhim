@@ -67,6 +67,7 @@
                 <h1 class="movie-list-title">NEW PHIM</h1>
                 <div class="movie-list-wrapper">       
                     <div class="movie-list">
+
                         <div class="movie-list-item">
                         <img class="movie-list-item-img" src="../img/1.jpg" alt="">
                             <span class="movie-list-item-title">Her</span>
@@ -74,6 +75,7 @@
                                 hic fugit similique accusantium.</p>
                             <button class="movie-list-item-button">Watch</button>
                         </div>
+                        
                         <div class="movie-list-item">
                         <img class="movie-list-item-img" src="../img/2.jpg" alt="">
                              
@@ -124,47 +126,15 @@
         <div><h2>DANH SÁCH PHIM</h2></div>
         <br>
         <div class="wrapper">            
-
-            <div class="box"> 
-                <a><i class="fas fa-play"></i></a>
-                <img class="" src="../img/1.jpg" alt="">
-                <h4>Hương mật tựa khói sương</h4>
-            </div>
-            <div class="box"> 
-                <a><i class="fas fa-play"></i></a>
-                <img class="" src="../img/2.jpg" alt="">
-                <h4>Hương mật tựa khói sương</h4>
-            </div>
+           <?php foreach ($phim as $Phim){
+            ?>             
+           
             <div class="box">
-                <a><i class="fas fa-play"></i></a>
-                <img class="" src="../img/3.jpg" alt="">
-                <h4>Hương mật tựa khói sương</h4>
+                <a href="#"><i class="fas fa-play"></i></a>
+                <img class="" src="<?php echo $Phim["Anh"]?>" alt="">
+                <h4><?php echo $Phim["TenPhim"]?></h4>
             </div>
-            <div class="box">
-                <a><i class="fas fa-play"></i></a>
-                <img class="" src="../img/5.jpg" alt="">
-                <h4>Hương mật tựa khói sương</h4>
-            </div>
-            <div class="box">
-                <a><i class="fas fa-play"></i></a>
-                <img class="" src="../img/4.jpg" alt="">
-                <h4>Hương mật tựa khói sương</h4>
-            </div>
-            <div class="box">
-                <a><i class="fas fa-play"></i></a>
-                <img class="" src="../img/2.jpg" alt="">
-                <h4>Hương mật tựa khói sương</h4>
-            </div>
-            <div class="box">
-                <a><i class="fas fa-play"></i></a>
-                <img class="" src="../img/1.jpg" alt="">
-                <h4>Hương mật tựa khói sương</h4>
-            </div>
-            <div class="box">
-                <a><i class="fas fa-play"></i></a>
-                <img class="" src="../img/5.jpg" alt="">
-                <h4>Hương mật tựa khói sương</h4>
-            </div>
+            <?php }?>
         </div>  
             
     
