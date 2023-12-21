@@ -18,7 +18,6 @@ $router = new Router();
 // Add routes
 
 $router->addRoute('/\//', [new PhimController(), 'dsPhim']);
-$router->addRoute('/\//', [new LoaiPhimController(), 'dsLoai']);
 
 $router->addRoute('/\/user\/login/', [new TaiKhoanController(), 'login']);
 $router->addRoute('/\/user\/register/', [new TaiKhoanController(), 'register']);
