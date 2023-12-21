@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\ChiTietController;
 use App\Controller\DangKyController;
 use App\Controller\DangNhapController;
 use App\Controller\DangXuatController;
@@ -27,5 +28,5 @@ $router->addRoute('/\/user\/dangky/', [new DangKyController(), 'Dangky']);
 $router->addRoute('/\/user\/logout/', [new DangXuatController(), 'logout']);
 
 
-$router->addRoute('/\/user\/detail\/(\d+)/', [new PhimController(), 'showPhim']);
+$router->addRoute('/\/user\/detail/', [new ChiTietController(), 'showPhim']);
 $router->addRoute('/\/user\/timkiem/', [new TimKiemController(), 'TimKiem']);
