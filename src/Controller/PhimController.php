@@ -21,7 +21,7 @@ class PhimController extends Controller{
     {
         session_start();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $key = $_POST['noidungtimkiem'];
+            $key = $_POST['search'];
 
             if($key != null){
                 $phim = $this->Phim->timkiemphimtheoten($key);

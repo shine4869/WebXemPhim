@@ -29,7 +29,7 @@
             
             <div class="logo"><a href="/user/home"><img class="" src="../img/logo.png" alt=""></a></div>
             <div class="search-box">
-                <form action="">
+                <form action="/user/timkiem">
                         <input type="text" name="search" id="srch" placeholder="Search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     
