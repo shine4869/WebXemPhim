@@ -144,7 +144,7 @@
         foreach($phim as $Phim){
             ?>
                 <div class="box">
-                    <a href="#"><i class="fas fa-play"></i></a>
+                    <a href="/user/detail/<?= isset($Phim['id'])?>"><i class="fas fa-play"></i></a>
                     <img class="" src="<?php echo $Phim["Anh"]?>" alt="">
                     <h4><?php echo $Phim["TenPhim"]?></h4>
                 </div>
