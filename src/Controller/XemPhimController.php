@@ -5,7 +5,7 @@ use App\Controller;
 use App\Model\LoaiPhim;
 use App\Model\Phim ;
 
-class ChiTietController extends Controller{
+class XemPhimController extends Controller{
     private $Phim;
     private $Loai;
     public function __construct()
@@ -13,11 +13,12 @@ class ChiTietController extends Controller{
         $this->Phim = new Phim();
         $this->Loai = new LoaiPhim();
     }
-    public function showPhim($MaPhim) {
+    public function XemPhim($MaPhim) {
         $loai = $this->Loai->getLoai();
         $ctphim = $this->Phim->getPhimtheoma($MaPhim);
+        $phim = $this->Phim->getPhim();
 
-        $this->render('users\detail', ['ctphim' => $ctphim, 'loai'=> $loai]);
+        $this->render('users\watch_movie', ['ctphim' => $ctphim, 'loai'=> $loai, 'phim' => $phim]);
         
     }
 }

@@ -1,7 +1,7 @@
 <?php
 namespace App\Model;
 
-class loaiphim{
+class LoaiPhim{
     private $mysqli;
 
     public function __construct()
