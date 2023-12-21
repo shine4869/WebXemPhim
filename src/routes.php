@@ -28,5 +28,5 @@ $router->addRoute('/\/user\/dangky/', [new DangKyController(), 'Dangky']);
 $router->addRoute('/\/user\/logout/', [new DangXuatController(), 'logout']);
 
 
-$router->addRoute('/\/user\/detail/', [new ChiTietController(), 'showPhim']);
+$router->addRoute('/\/user\/detail\/(\w+)/', [new ChiTietController(), 'showPhim']);
 $router->addRoute('/\/user\/timkiem/', [new TimKiemController(), 'TimKiem']);
