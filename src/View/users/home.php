@@ -18,7 +18,7 @@
             
             <div class="logo"><a href="#"><img class="" src="../img/logo.png" alt=""></a></div>
             <div class="search-box">
-                <form action="/user/timkiem">
+                <form action="/user/timkiem" method="post">
                         <input type="text" name="search" id="srch" placeholder="Search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     
@@ -126,6 +126,7 @@
         <div><h2>DANH SÁCH PHIM</h2></div>
         <br>
         <div class="wrapper">            
+<<<<<<< HEAD
            <?php foreach ($phim as $Phim){
             ?>             
            
@@ -135,6 +136,45 @@
                 <h4><?php echo $Phim["TenPhim"]?></h4>
             </div>
             <?php }?>
+=======
+        <?php
+    if (isset($_SESSION['dsphimtk'])) {
+        $dstk = $_SESSION['dsphimtk'];
+        if (!empty($dstk)) {
+            foreach ($dstk as $Phim) {
+                ?>
+                <div class="box">
+                    <a href="/user/detail"><i class="fas fa-play"></i></a>
+                    <img class="" src="<?php echo $Phim["Anh"]?>" alt="">
+                    <h4><?php echo $Phim["TenPhim"]?></h4>
+                </div>
+                <?php 
+            }
+        } else {
+            ?>
+            <p>Không có phim nào thỏa mãn.</p>
+            <?php
+        }
+        // Xóa biến session sau khi sử dụng
+        unset($_SESSION['dsphimtk']);
+    }
+    else {
+        foreach($phim as $Phim){
+            ?>
+                <div class="box">
+                    <a href="#"><i class="fas fa-play"></i></a>
+                    <img class="" src="<?php echo $Phim["Anh"]?>" alt="">
+                    <h4><?php echo $Phim["TenPhim"]?></h4>
+                </div>
+                <?php 
+        }
+    }
+    ?>
+            
+
+
+
+>>>>>>> eb83c5480e8d66f634c949f38e68eb4945d3fa9e
         </div>  
             
     

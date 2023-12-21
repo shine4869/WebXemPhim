@@ -56,14 +56,16 @@
     <div class="detail">
         <div class="detail-body">
                 <div class="detail-img">
-                    <img class="" src="../img/2.jpg" alt=""> 
+
+                
+                    <img class="" src="<?php $ctphim['Anh'] ?>" alt=""> 
                 </div>
                 <div class="detail-icon">
                     <a href=""><i class="fas fa-play"></i> Xem ngay</a>
                     <a href=""><i class="fa-regular fa-plus"></i> Danh sách</a>
                     
                 </div>
-                <h2>Hương mật tựa khói xương</h2>
+                <h2><?php $ctphim['TenPhim'] ?></h2>
         </div>
     </div>
    
