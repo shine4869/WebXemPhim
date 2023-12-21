@@ -26,5 +26,5 @@ $router->addRoute('/\/user\/dangky/', [new DangKyController(), 'Dangky']);
 $router->addRoute('/\/user\/logout/', [new DangXuatController(), 'logout']);
 
 
-$router->addRoute('/\/user\/detail/', [new PhimController(), 'showPhim']);
-$router->addRoute('/\/user\/timkiem/', [new PhimController(), 'TimKiem']);
+$router->addRoute('/\/user\/detail\/(\d+)/', [new PhimController(), 'showPhim']);
+$router->addRoute('/\/user\/timkiem\/(\d+)/', [new PhimController(), 'TimKiem']);

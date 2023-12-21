@@ -31,13 +31,13 @@ class Phim{
         $Id = $this->mysqli->real_escape_string($Id);
         $result = $this->mysqli->query("SELECT * FROM phim WHERE MaPhim = $Id");
 
-        return $result->fetch_assoc();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     public function timkiemphimtheoten($key){
         $key = $this->mysqli->real_escape_string($key);
         $result = $this->mysqli->query("SELECT * FROM phim WHERE TenPhim LIKE '%$key%'");
-        return $result->fetch_assoc();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 
