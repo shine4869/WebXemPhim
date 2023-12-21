@@ -23,7 +23,7 @@ class PhimController extends Controller{
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $key = $_POST['search'];
 
-            if($key != null){
+            if($key != null){                
                 $phim = $this->Phim->timkiemphimtheoten($key);
                 $_SESSION['currentphim'] = $phim;
                 header("Location: ../user/home");
