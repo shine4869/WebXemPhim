@@ -18,7 +18,6 @@ $router = new Router();
 
 
 $router->addRoute('/\//', [new PhimController(), 'dsPhim']);
-$router->addRoute('/\//', [new LoaiPhimController(), 'dsLoai']);
 
 $router->addRoute('/\/user\/login/', [new TaiKhoanController(), 'login']);
 $router->addRoute('/\/user\/register/', [new TaiKhoanController(), 'register']);
@@ -29,18 +28,21 @@ $router->addRoute('/\/user\/dangky/', [new DangKyController(), 'Dangky']);
 $router->addRoute('/\/user\/logout/', [new DangXuatController(), 'logout']);
 
 
-
-
-$router->addRoute('/\/user\/detail\/(\d+)/', [new PhimController(), 'showPhim']);
-$router->addRoute('/\/user\/timkiem\/(\d+)/', [new PhimController(), 'TimKiem']);
-
-
-
-
-
 $router->addRoute('/\/user\/detail/', [new ChiTietController(), 'showPhim']);
-
-$router->addRoute('/\/user\/detail\/(\w+)/', [new ChiTietController(), 'showPhim']);
-
 $router->addRoute('/\/user\/timkiem/', [new TimKiemController(), 'TimKiem']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
