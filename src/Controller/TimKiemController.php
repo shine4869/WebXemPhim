@@ -14,21 +14,14 @@ class TimKiemController {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $key = $_POST['search'];
 
-            if($key != null){
+            if($key !== null && $key !== ' '){
                 $phimtk = (new Phim())->timkiemphimtheoten($key);
-                if(!empty($phimtk)){
                     $_SESSION['dsphimtk'] = $phimtk;
-                    
-                } 
-                else{
-                    $_SESSION['thongbao'] = "khong co phim";
-                }
                 header("Location: ../user/home");
                 exit();
             }
             else{
-                $phimtk= (new Phim())->getPhim();
-                $_SESSION['dsphimtk'] = $phimtk;
+                $_SESSION['dsphimtk'] = (new Phim())->getPhim(); // Đặt thành mảng rỗng khi không có tìm kiếm
                 header("Location: ../user/home");
                 exit();
                 

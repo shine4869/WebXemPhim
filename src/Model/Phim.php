@@ -31,7 +31,7 @@ class Phim{
         $Id = $this->mysqli->real_escape_string($Id);
         $result = $this->mysqli->query("SELECT * FROM phim WHERE MaPhim = $Id");
 
-        return $result->fetch_all(MYSQLI_ASSOC);
+        return $result->fetch_assoc();
     }
 
     public function timkiemphimtheoten($key){

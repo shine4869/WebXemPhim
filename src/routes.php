@@ -6,6 +6,7 @@ use App\Controller\DangXuatController;
 use App\Controller\PhimController;
 use App\Router;
 use App\Controller\TaiKhoanController;
+use App\Controller\TimKiemController;
 use App\Model\TaiKhoan;
 
 // Usage:
@@ -27,4 +28,4 @@ $router->addRoute('/\/user\/logout/', [new DangXuatController(), 'logout']);
 
 
 $router->addRoute('/\/user\/detail\/(\d+)/', [new PhimController(), 'showPhim']);
-$router->addRoute('/\/user\/timkiem/', [new PhimController(), 'TimKiem']);
+$router->addRoute('/\/user\/timkiem/', [new TimKiemController(), 'TimKiem']);
