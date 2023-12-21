@@ -126,17 +126,6 @@
         <div><h2>DANH SÁCH PHIM</h2></div>
         <br>
         <div class="wrapper">            
-<<<<<<< HEAD
-           <?php foreach ($phim as $Phim){
-            ?>             
-           
-            <div class="box">
-                <a href="/user/detail"><i class="fas fa-play"></i></a>
-                <img class="" src="<?php echo $Phim["Anh"]?>" alt="">
-                <h4><?php echo $Phim["TenPhim"]?></h4>
-            </div>
-            <?php }?>
-=======
         <?php
     if (isset($_SESSION['dsphimtk'])) {
         $dstk = $_SESSION['dsphimtk'];
@@ -144,7 +133,7 @@
             foreach ($dstk as $Phim) {
                 ?>
                 <div class="box">
-                    <a href="/user/detail"><i class="fas fa-play"></i></a>
+                    <a href="/user/detail/<?= isset($Phim['id'])?>"><i class="fas fa-play"></i></a>
                     <img class="" src="<?php echo $Phim["Anh"]?>" alt="">
                     <h4><?php echo $Phim["TenPhim"]?></h4>
                 </div>
@@ -174,7 +163,6 @@
 
 
 
->>>>>>> eb83c5480e8d66f634c949f38e68eb4945d3fa9e
         </div>  
             
     
