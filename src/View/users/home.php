@@ -126,15 +126,20 @@
         <div><h2>DANH SÁCH PHIM</h2></div>
         <br>
         <div class="wrapper">            
-           <?php foreach ($phim as $Phim){
-            ?>             
-           
-            <div class="box">
-                <a href="#"><i class="fas fa-play"></i></a>
-                <img class="" src="<?php echo $Phim["Anh"]?>" alt="">
-                <h4><?php echo $Phim["TenPhim"]?></h4>
-            </div>
-            <?php }?>
+        <?php
+
+
+             foreach($phim as $Phim){
+             
+        ?>
+                <div class="box">
+                    <a href="#"><i class="fas fa-play"></i></a>
+                    <img class="" src="<?php echo $Phim["Anh"]?>" alt="">
+                    <h4><?php echo $Phim["TenPhim"]?></h4>
+                </div>
+                <?php 
+                } 
+                ?>
         </div>  
             
     
