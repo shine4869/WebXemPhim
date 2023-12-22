@@ -1,14 +1,16 @@
 <?php
 namespace App\Controller;
 
+use App\Model\LoaiPhim;
 use App\Model\Phim;
 use App\Controller;
-use App\Model\loaiphim;
 use Collator;
 
 class PhimController extends Controller{
     private $Loai;
     private $Phim ;
+    
+
 
     public function __construct()
     {
@@ -22,11 +24,20 @@ class PhimController extends Controller{
 
         $this->render('users\home', ['phim' => $phim, 'loai'=> $loai]);
     }
+
+    public function dsLoai()
+    {
+        $loai = $this->Loai->getLoai();
+
+        $this->render('users\home', ['loai' => $loai]);
+    }
+
     public function TimKiem($Id)
     {
         session_start();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $key = $_POST['search'];
+
 
             if($key != null){                
                 $phim = $this->Phim->timkiemphimtheoten($key);
@@ -45,4 +56,6 @@ class PhimController extends Controller{
         }
     }
 }
+
+
 ?>
