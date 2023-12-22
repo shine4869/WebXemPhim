@@ -36,7 +36,7 @@
 
                         </li>
 
-                        <li><a href="#">Lịch Sử</a></li>
+                        <li><a href="#"><i class="fas fa-heart"></i> Phim yêu thích</a></li>
                         
                         <?php 
                         session_start();
@@ -55,7 +55,12 @@
                     <label for="chk1"><i class="fa fa-bars"></i></label>
             </div> -->
     </header>
-    <div class="center slider"></div>
+    <br>
+            <div class="center_slider">
+            <div class="center slider"></div>
+            </div>
+            
+         
             <div class="movie-list-container">
                 <h1 class="movie-list-title">NEW PHIM</h1>
                 <div class="movie-list-wrapper">       
@@ -63,9 +68,8 @@
 
                         <div class="movie-list-item">
                         <img class="movie-list-item-img" src="../img/1.jpg" alt="">
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.</p>
+                            <span class="movie-list-item-title">Hương mật tựa khói xương</span>
+                            <p class="movie-list-item-desc">Hương Mật Tựa Khói Sương là câu chuyện tình yêu lãng mạn có ngọt ngào,</p>
                             <button class="movie-list-item-button">Watch</button>
                         </div>
                         
@@ -113,10 +117,10 @@
                             <button class="movie-list-item-button">Watch</button>
                         </div>
                     </div>
-                    <i class="fas fa-chevron-right arrow"></i>
+                    <i class="fas fa-chevron-right arrow" ></i>
                 </div>
             </div>
-        <div><h2>DANH SÁCH PHIM</h2></div>
+        <div class="listphim"><h2>DANH SÁCH PHIM</h2></div>
         <br>
         <div class="wrapper">            
         <?php
@@ -163,15 +167,24 @@
         }
     }
     ?>
-            
-
-
-
         </div>  
             
-    
-  
-    <script src="../js/app.js"></script>
+<div class="footer">
+        <div class="footer_">
+        <a><i class="fas fa-laptop-code"></i> Nguyễn Khánh Huy</a> <br>
+        <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vs</a></p>
+        </div>
+<div class="footer_">
+        <a><i class="fas fa-palette"></i> Hoàng Thị Lin</a> <br>
+  <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vs</a></p>
+</div>
+<div class="footer_">
+    <a><i class="fas fa-database"></i> Hoànng Trọng Quốc Tiến</a> <br>
+  <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vs</a></p>
+</div>
+</div>
+
+    <script src="../../js/app.js"></script>
    
 </body>
 

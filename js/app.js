@@ -12,21 +12,10 @@
                 errors.push("Nhập đầy đủ thông tin!");
             }
             else{
-                // if(password.value.length < 4){
-                //     errors.push("Mật khẩu phải có ít nhất 4 ký tự!");
-                // }else{
-                //     if(password.value.trim() !=confirmPassword.value.trim() ){
-                //         errors.push("confirmPassword không khớp!");
-                //     }
-                // } 
-                // if (!/^\d+$/.test(sodienthoai.value.trim())) {
-                //     errors.push("Số điện thoại chỉ chứa ký tự số");
-                // }  
                 if(password.value.trim() !=confirmPassword.value.trim() ){
                     errors.push("confirmPassword không khớp!");
                 }                
-            }
-        
+            }        
             if(errors.length > 0){
                 e.preventDefault();
                 errorMessage.toggleAttribute('hidden');
@@ -49,4 +38,24 @@
         }
     })
    }
-    
+const arrows = document.querySelectorAll(".arrow");
+const movieLists = document.querySelectorAll(".movie-list");
+arrows.forEach((arrow, i) => {
+  const itemNumber = movieLists[i].querySelectorAll("img").length;
+  let clickCounter = 0;
+  arrow.addEventListener("click", () => {
+    const ratio = Math.floor(window.innerWidth / 270);
+    clickCounter++;
+    if (itemNumber - (4 + clickCounter) + (4 - ratio) >= 0) {
+      movieLists[i].style.transform = `translateX(${
+        movieLists[i].computedStyleMap().get("transform")[0].x.value - 300
+      }px)`;
+    } else {
+      movieLists[i].style.transform = "translateX(0)";
+      clickCounter = 0;
+    }
+  });
+  console.log(Math.floor(window.innerWidth / 270));
+});
+
+
