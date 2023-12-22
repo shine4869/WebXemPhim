@@ -16,7 +16,7 @@
 <body>
     <header>  
             
-            <div class="logo"><a href="#"><img class="" src="../img/logo.png" alt=""></a></div>
+            <div class="logo"><a href=""><img class="" src="../img/logo.png" alt=""></a></div>
             <div class="search-box">
                 <form action="/user/timkiem" method="post">
                         <input type="text" name="search" id="srch" placeholder="Search">
@@ -126,7 +126,11 @@
             foreach ($dstk as $Phim) {
                 ?>
                 <div class="box">
-                    <a href="/user/detail/<?= isset($Phim['id'])?>"><i class="fas fa-play"></i></a>
+<<<<<<< HEAD
+                    <a href="/user/detail"><i class="fas fa-play"></i></a>
+=======
+                    <a href="/user/detail/<?= $Phim['MaPhim'] ?>"><i class="fas fa-play"></i></a>
+>>>>>>> 43ae4f313691f8c08a33ad33270b807776078a38
                     <img class="" src="<?php echo $Phim["Anh"]?>" alt="">
                     <h4><?php echo $Phim["TenPhim"]?></h4>
                 </div>
@@ -144,7 +148,7 @@
         foreach($phim as $Phim){
             ?>
                 <div class="box">
-                    <a href="/user/detail/<?= isset($Phim['id'])?>"><i class="fas fa-play"></i></a>
+                    <a href="/user/detail/<?= $Phim['MaPhim'] ?>"><i class="fas fa-play"></i></a>
                     <img class="" src="<?php echo $Phim["Anh"]?>" alt="">
                     <h4><?php echo $Phim["TenPhim"]?></h4>
                 </div>

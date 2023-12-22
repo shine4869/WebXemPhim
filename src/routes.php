@@ -8,6 +8,7 @@ use App\Controller\PhimController;
 use App\Router;
 use App\Controller\TaiKhoanController;
 use App\Controller\TimKiemController;
+use App\Controller\XemphimController;
 use App\Model\TaiKhoan;
 
 // Usage:
@@ -27,8 +28,9 @@ $router->addRoute('/\/user\/dangky/', [new DangKyController(), 'Dangky']);
 $router->addRoute('/\/user\/logout/', [new DangXuatController(), 'logout']);
 
 
-$router->addRoute('/\/user\/detail/', [new ChiTietController(), 'showPhim']);
 $router->addRoute('/\/user\/timkiem/', [new TimKiemController(), 'TimKiem']);
+$router->addRoute('/\/user\/detail\/([^\/]+)/', [new ChiTietController(), 'showPhim']);
+$router->addRoute('/\/user\/xemphim\/([^\/]+)/', [new XemphimController(), 'XemPhim']);
 
 ?>
 
@@ -42,6 +44,4 @@ $router->addRoute('/\/user\/timkiem/', [new TimKiemController(), 'TimKiem']);
 
 
 
-
-
-
+?>
