@@ -39,6 +39,18 @@ class Phim{
         $result = $this->mysqli->query("SELECT * FROM phim WHERE TenPhim LIKE '%$key%'");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    public function getLoai()
+    {
+        $result = $this->mysqli->query("SELECT TenLoai FROM loaiphim");
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function getPhimtheoloai($Ml)
+    {
+        $Ml = $this->mysqli->real_escape_string($Ml);
+        $result = $this->mysqli->query("SELECT * FROM phim WHERE MaLoai like $Ml");
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
 
 }
