@@ -18,7 +18,7 @@
             
             <div class="logo"><a href="/user/home"><img class="" src="../../img/logo.png" alt=""></a></div>
             <div class="search-box">
-                <form action="/user/timkiem">
+            <form action="/user/timkiem" method="post">
                         <input type="text" name="search" id="srch" placeholder="Search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     
@@ -36,10 +36,17 @@
 
                         </li>
 
-                        <li><a href="#">Lịch Sử</a></li>
-                        <li><a href="/user/login"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
-                        <li><a href="/user/register"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
-                        <!-- <li><a href="#"><i class="fa fa-user"></i> User</a></li> -->
+                        <li><a href="#"><i class="fas fa-heart"></i> Phim yêu thích</a></li>
+                        <?php 
+                        session_start();
+                            if(isset($_SESSION['currentUser'])) {
+                        ?>
+                            <li><a href="#"><i class="fa fa-user"></i> <?php echo  $_SESSION['us'] ?></a></li>
+                            <li><a href="/user/logout"><i class="fa-solid fa-right-from-bracket"></i> ĐĂNG XUẤT</a></li>
+                        <?php } else {?>
+                            <li><a href="/user/login"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
+                            <li><a href="/user/register"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
+                        <?php }?>
 
             </ul>
             <!-- <div class="menu">
@@ -53,13 +60,15 @@
             </video>
         </div>
         <div class="class_title">
+            
                 <h2><?php echo $ctphim['TenPhim'] ?></h3>
+                
                 <p><?php echo $ctphim['NoiDung'] ?>
                 </p>
 
 
                 <h1>Đề xuất cho bạn</h1>
-    </div>
+        </div>
         <div class="wrapper">       
             <?php 
             foreach($phim as $Phim){
@@ -73,7 +82,21 @@
             }
             ?>     
         
-    </div>     
+    </div>  
+    <div class="footer">
+        <div class="footer_">
+        <a><i class="fas fa-laptop-code"></i> Nguyễn Khánh Huy</a> <br>
+        <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vn</a></p>
+        </div>
+<div class="footer_">
+        <a><i class="fas fa-palette"></i> Hoàng Thị Lin</a> <br>
+  <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vn</a></p>
+</div>
+<div class="footer_">
+    <a><i class="fas fa-database"></i> Hoànng Trọng Quốc Tiến</a> <br>
+  <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vn</a></p>
+</div>
+</div>  
     <script src="../js/app.js"></script>  
 </body>
 
