@@ -22,7 +22,7 @@ class LoaiPhim{
     }
     public function getLoai()
     {
-        $result = $this->mysqli->query("SELECT TenLoai FROM loaiphim");
+        $result = $this->mysqli->query("SELECT * FROM loaiphim");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 }

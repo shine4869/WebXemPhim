@@ -4,20 +4,25 @@ namespace App\Controller;
 
 use App\Model\LoaiPhim;
 use App\Controller;
+use App\Model\Phim;
 
 class LoaiPhimController extends Controller
 {
     private $Loai;
-
+    private $Phim;
     public function __construct()
     {
+        
         $this->Loai = new LoaiPhim();
+        $this->Phim = new Phim();
     }
-
-    public function dsLoai()
-    {
+    public function phimtheoma($Ml) {
         $loai = $this->Loai->getLoai();
 
-        $this->render('users\home', ['loai' => $loai]);
+        $dsphimtheoloai = $this->Phim->getPhimtheoloai($Ml);
+        
+
+        $this->render('users\home', ['dsphimtheoloai' => $dsphimtheoloai, 'loai'=> $loai]);
+        
     }
 }

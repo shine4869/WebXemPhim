@@ -32,7 +32,8 @@ class PhimController extends Controller{
         $this->render('users\home', ['loai' => $loai]);
     }
 
-    public function TimKiem($Id)
+
+    public function TimKiem()
     {
         session_start();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
