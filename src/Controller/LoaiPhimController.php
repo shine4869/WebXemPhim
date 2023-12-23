@@ -22,6 +22,11 @@ class LoaiPhimController extends Controller
 
         $newphim = $this->Phim->getPhimtheonew();
 
+<<<<<<< Updated upstream
+=======
+        $newphim = $this->Phim->getPhimtheonew();
+
+>>>>>>> Stashed changes
         $dsphimtheoloai = $this->Phim->getPhimtheoma($Ml);
         
 
