@@ -4,6 +4,7 @@ use App\Controller\ChiTietController;
 use App\Controller\DangKyController;
 use App\Controller\DangNhapController;
 use App\Controller\DangXuatController;
+use App\Controller\LoaiPhimController;
 use App\Controller\PhimController;
 use App\Router;
 use App\Controller\TaiKhoanController;
@@ -31,6 +32,7 @@ $router->addRoute('/\/user\/logout/', [new DangXuatController(), 'logout']);
 $router->addRoute('/\/user\/timkiem/', [new TimKiemController(), 'TimKiem']);
 $router->addRoute('/\/user\/detail\/([^\/]+)/', [new ChiTietController(), 'showPhim']);
 $router->addRoute('/\/user\/xemphim\/([^\/]+)/', [new XemphimController(), 'XemPhim']);
+$router->addRoute('/\/user\/dsphimtheoloai\/([^\/]+)/', [new LoaiPhimController(), 'phimtheoma']);
 
 ?>
 
