@@ -19,6 +19,11 @@ class LoaiPhimController extends Controller
     public function phimtheoma($Ml) {
         $loai = $this->Loai->getLoai();
 
+<<<<<<< Updated upstream
+=======
+        $newphim = $this->Phim->getPhimtheonew();
+
+>>>>>>> Stashed changes
         $dsphimtheoloai = $this->Phim->getPhimtheoma($Ml);
         
 
