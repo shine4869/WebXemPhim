@@ -22,7 +22,7 @@ class LoaiPhimController extends Controller
 
         $newphim = $this->Phim->getPhimtheonew();
 
-        $dsphimtheoloai = $this->Phim->getPhimtheoloai($Ml);
+        $dsphimtheoloai = $this->Phim->getPhimtheoma($Ml);
         
 
         $this->render('users/home', ['dsphimtheoloai' => $dsphimtheoloai, 'loai'=> $loai, 'phim' => $phim, 'newphim' => $newphim]);
