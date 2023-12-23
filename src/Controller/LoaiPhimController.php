@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Model\LoaiPhim;
 use App\Controller;
+use App\Model\LoaiPhim;
 use App\Model\Phim;
 
 class LoaiPhimController extends Controller

@@ -35,6 +35,7 @@ $router->addRoute('/\/user\/logout/', [new DangXuatController(), 'logout']);
 $router->addRoute('/\/user\/timkiem/', [new TimKiemController(), 'TimKiem']);
 $router->addRoute('/\/user\/detail\/([^\/]+)/', [new ChiTietController(), 'showPhim']);
 $router->addRoute('/\/user\/xemphim\/([^\/]+)/', [new XemphimController(), 'XemPhim']);
+$router->addRoute('/\/user\/dsphimtheoloai\/([^\/]+)/', [new LoaiPhimController(), 'phimtheoma']);
 
 
 $router->addRoute('/\/user\/phimtheoma\/([^\/]+)/', [new LoaiPhimController(), 'phimtheoma']);

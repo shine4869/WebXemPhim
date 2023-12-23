@@ -44,7 +44,7 @@ class Phim{
         $result = $this->mysqli->query("SELECT TenLoai FROM loaiphim");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-    public function getPhimtheoloai($Ml)
+    public function timkiemphimtheoloai($Ml)
     {
         $Ml = $this->mysqli->real_escape_string($Ml);
         $result = $this->mysqli->query("SELECT * FROM phim WHERE MaLoai = '$Ml' ");
