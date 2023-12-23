@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Controller;
 use App\Model\LoaiPhim;
+use App\Controller;
 use App\Model\Phim;
 
 class LoaiPhimController extends Controller
@@ -18,16 +18,14 @@ class LoaiPhimController extends Controller
     }
     public function phimtheoma($Ml) {
         $loai = $this->Loai->getLoai();
+        $phim = $this->Phim->getPhim();
 
-<<<<<<< Updated upstream
-=======
         $newphim = $this->Phim->getPhimtheonew();
 
->>>>>>> Stashed changes
-        $dsphimtheoloai = $this->Phim->getPhimtheoma($Ml);
+        $dsphimtheoloai = $this->Phim->getPhimtheoloai($Ml);
         
 
-        $this->render('users\home', ['dsphimtheoloai' => $dsphimtheoloai, 'loai'=> $loai]);
+        $this->render('users/home', ['dsphimtheoloai' => $dsphimtheoloai, 'loai'=> $loai, 'phim' => $phim, 'newphim' => $newphim]);
         
     }
 }
