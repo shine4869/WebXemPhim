@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
         rel="stylesheet">
@@ -16,9 +16,9 @@
 <body>
     <header>  
             
-            <div class="logo"><a href="/user/home"><img class="" src="../img/logo.png" alt=""></a></div>
+            <div class="logo"><a href="/user/home"><img class="" src="../../img/logo.png" alt=""></a></div>
             <div class="search-box">
-                <form action="user/timkiem">
+            <form action="/user/timkiem" method="post">
                         <input type="text" name="search" id="srch" placeholder="Search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     
@@ -36,7 +36,7 @@
 
                         </li>
 
-                        <li><a href="#">Lịch Sử</a></li>
+                        <li><a href="#"><i class="fas fa-heart"></i> Phim yêu thích</a></li>
                         <li><a href="/user/login"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
                         <li><a href="/user/register"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
                         <!-- <li><a href="#"><i class="fa fa-user"></i> User</a></li> -->

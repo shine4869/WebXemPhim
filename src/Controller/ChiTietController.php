@@ -22,5 +22,4 @@ class ChiTietController extends Controller{
     }
 }
 
-
 ?>

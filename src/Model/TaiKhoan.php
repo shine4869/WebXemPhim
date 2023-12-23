@@ -35,6 +35,12 @@ class TaiKhoan {
         $result = $this->mysqli->query("SELECT * FROM taikhoan WHERE TaiKhoan = '$tendn'");
         return $result->fetch_assoc();
     }
+    public function LayTaiKhoanBangid($id)
+    {
+        $id = $this->mysqli->real_escape_string($id);
+        $result = $this->mysqli->query("SELECT * FROM taikhoan WHERE Id = '$id'");
+        return $result->fetch_assoc();
+    }
 
     public function Dangky($tendn, $matkhau, $sodt){
         $tendn = $this->mysqli->real_escape_string($tendn);

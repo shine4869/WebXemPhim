@@ -47,9 +47,19 @@ class Phim{
     public function timkiemphimtheoloai($Ml)
     {
         $Ml = $this->mysqli->real_escape_string($Ml);
-        $result = $this->mysqli->query("SELECT * FROM phim WHERE MaLoai like $Ml");
+        $result = $this->mysqli->query("SELECT * FROM phim WHERE MaLoai = '$Ml' ");
+
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getPhimtheonew()
+    {
+        $result = $this->mysqli->query("SELECT * FROM phim WHERE MaLoai = 'CT' ");
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
 
 
 }

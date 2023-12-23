@@ -36,10 +36,18 @@
 
                         </li>
 
-                        <li><a href="#">Lịch Sử</a></li>
-                        <li><a href="#"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
-                        <li><a href="#"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
-                        <!-- <li><a href="#"><i class="fa fa-user"></i> User</a></li> -->
+                        <?php 
+                        session_start();
+                            if(isset($_SESSION['currentUser'])) {
+                        ?>
+                            <li><a href="/user/getyeuthich/<?= $_SESSION['currentUser']['Id']?>"><i class="fas fa-heart"></i> Phim yêu thích</a></li>
+                            <li><a href="#"><i class="fa fa-user"></i> <?php echo  $_SESSION['us'] ?></a></li>
+                            <li><a href="/user/logout"><i class="fa-solid fa-right-from-bracket"></i> ĐĂNG XUẤT</a></li>
+                        <?php } else {?>
+                            <li><a href="/user/login"><i class="fas fa-heart"></i> Phim yêu thích</a></li>
+                            <li><a href="/user/login"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
+                            <li><a href="/user/register"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
+                        <?php }?>
 
             </ul>
             <!-- <div class="menu">
@@ -48,19 +56,50 @@
     </header>
     <div class="detail">
         <div class="detail-body">
-                <div class="detail-img">
-
+                <div class="detail-img">                
+                        <img class="" src="<?php echo '../'. $ctphim['Anh'] ?>" alt=""> 
+                </div>
+                <div class="detail_content">
                 
-                    <img class="" src="<?php echo '../'. $ctphim['Anh'] ?>" alt=""> 
+                <h1><?php echo $ctphim['TenPhim'] ?></h1>
+                <h2>Nội dung:</h2>
+                <div class="content"><p><?php echo $ctphim['NoiDung'] ?></p></div>   
+                <h4>Lượt xem:230.000.200 lượt</h4>
+                <div class="Evaluate">
+                <h3>Đánh giá: </h3>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
                 </div>
                 <div class="detail-icon">
-                    <a href="/user/xemphim/<?= $ctphim['MaPhim'] ?>"><i class="fas fa-play"></i> Xem ngay</a>
-                    <a href=""><i class="fa-regular fa-plus"></i> Danh sách</a>
-                    
+                    <a href="/user/xemphim/<?=$ctphim['MaPhim'] ?>"><i class="fas fa-play"></i> Xem ngay</a>  
+                   <?php if(isset($_SESSION['thongbao']))     ?>                                     
+                        <a href="/user/themyeuthich/<?=$ctphim['MaPhim'] ?>"><i class="fa-regular fa-plus"></i>Danh sách </a>                
+                        
+                                    
+                        
+                                
                 </div>
-                <h2><?php echo $ctphim['TenPhim'] ?></h2>
+                </div>
+                    
         </div>
     </div>
+    <div class="footer">
+        <div class="footer_">
+        <a><i class="fas fa-laptop-code"></i> Nguyễn Khánh Huy</a> <br>
+        <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vn</a></p>
+        </div>
+<div class="footer_">
+        <a><i class="fas fa-palette"></i> Hoàng Thị Lin</a> <br>
+  <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vn</a></p>
+</div>
+<div class="footer_">
+    <a><i class="fas fa-database"></i> Hoànng Trọng Quốc Tiến</a> <br>
+  <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vn</a></p>
+</div>
+</div>
    
 </body>
 </html>
