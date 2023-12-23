@@ -6,13 +6,10 @@ use App\Controller\DangNhapController;
 use App\Controller\DangXuatController;
 use App\Controller\LoaiPhimController;
 use App\Controller\PhimController;
-use App\Controller\PhimYeuThichController;
 use App\Router;
 use App\Controller\TaiKhoanController;
 use App\Controller\TimKiemController;
 use App\Controller\XemphimController;
-use App\Controller\YeuThichController;
-use App\Model\Phim;
 use App\Model\TaiKhoan;
 
 // Usage:
@@ -40,10 +37,6 @@ $router->addRoute('/\/user\/dsphimtheoloai\/([^\/]+)/', [new LoaiPhimController(
 
 $router->addRoute('/\/user\/phimtheoma\/([^\/]+)/', [new LoaiPhimController(), 'phimtheoma']);
 
-$router->addRoute('/\/user\/themyeuthich\/([^\/]+)/', [new YeuThichController(), 'ThemYeuThich']);
-
-$router->addRoute('/\/user\/getyeuthich\/([^\/]+)/', [new PhimYeuThichController(), 'getyeuthich']);
-
 ?>
 
 
@@ -55,3 +48,5 @@ $router->addRoute('/\/user\/getyeuthich\/([^\/]+)/', [new PhimYeuThichController
 
 
 
+
+?>

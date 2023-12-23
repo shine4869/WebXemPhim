@@ -36,15 +36,14 @@
 
                         </li>
 
+                        <li><a href="#"><i class="fas fa-heart"></i> Phim yêu thích</a></li>
                         <?php 
                         session_start();
                             if(isset($_SESSION['currentUser'])) {
                         ?>
-                            <li><a href="/user/getyeuthich/<?= $_SESSION['currentUser']['Id']?>"><i class="fas fa-heart"></i> Phim yêu thích</a></li>
                             <li><a href="#"><i class="fa fa-user"></i> <?php echo  $_SESSION['us'] ?></a></li>
                             <li><a href="/user/logout"><i class="fa-solid fa-right-from-bracket"></i> ĐĂNG XUẤT</a></li>
                         <?php } else {?>
-                            <li><a href="/user/login"><i class="fas fa-heart"></i> Phim yêu thích</a></li>
                             <li><a href="/user/login"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
                             <li><a href="/user/register"><i class="fa fa-user-plus"></i>  ĐĂNG KÝ</a></li>
                         <?php }?>
@@ -74,13 +73,8 @@
                 <i class="fas fa-star"></i>
                 </div>
                 <div class="detail-icon">
-                    <a href="/user/xemphim/<?=$ctphim['MaPhim'] ?>"><i class="fas fa-play"></i> Xem ngay</a>  
-                   <?php if(isset($_SESSION['thongbao']))     ?>                                     
-                        <a href="/user/themyeuthich/<?=$ctphim['MaPhim'] ?>"><i class="fa-regular fa-plus"></i>Danh sách </a>                
-                        
-                                    
-                        
-                                
+                    <a href="/user/xemphim/<?= $ctphim['MaPhim'] ?>"><i class="fas fa-play"></i> Xem ngay</a>
+                    <a href=""><i class="fa-regular fa-plus"></i> Danh sách</a>                   
                 </div>
                 </div>
                     

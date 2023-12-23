@@ -37,6 +37,7 @@ class TaiKhoanController extends Controller
             session_start();
             if(isset($_SESSION['currentUser'])){
                 unset($_SESSION['currentUser']);
+                session_destroy();
                 $this->render('users\register', []);
                 exit();
             }
