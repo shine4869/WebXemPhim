@@ -190,6 +190,7 @@ header ul li:hover .drop-menu {
   left: 50px;
   opacity: 0;
   transition: 1s all ease-in-out;
+  text-decoration: none;
 }
 
 .arrow {

@@ -52,6 +52,15 @@ class Phim{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getPhimtheonew()
+    {
+        $result = $this->mysqli->query("SELECT * FROM phim WHERE MaLoai = 'CT' ");
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
+
 
 }
 

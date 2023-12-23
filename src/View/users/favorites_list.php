@@ -15,7 +15,7 @@
 <body>
 <header>  
             
-            <div class="logo"><a href=""><img class="" src="../img/logo.png" alt=""></a></div>
+            <div class="logo"><a href="/user/home"><img class="" src="../../img/logo.png" alt=""></a></div>
             <div class="search-box">
                 <form action="/user/timkiem" method="post">
                         <input type="text" name="search" id="srch" placeholder="Search">
@@ -25,7 +25,7 @@
             </div>
             <ul>
                         <li>
-                            <a href="#"><i class="far fa-list-alt"></i> THỂ LOẠI</a>
+                            <a href=""><i class="far fa-list-alt"></i> THỂ LOẠI</a>
                             
                             <ul class="drop-menu">
                             <?php foreach ($loai as $Loai){?> 
@@ -40,8 +40,9 @@
                         <?php 
                         session_start();
                             if(isset($_SESSION['currentUser'])) {
+                                $user = $_SESSION['currentUser'];
                         ?>
-                            <li><a href="#"><i class="fa fa-user"></i> <?php echo  $_SESSION['us'] ?></a></li>
+                            <li><a href="#"><i class="fa fa-user"></i> <?=$user['TaiKhoan']?></a></li>
                             <li><a href="/user/logout"><i class="fa-solid fa-right-from-bracket"></i> ĐĂNG XUẤT</a></li>
                         <?php } else {?>
                             <li><a href="/user/login"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
@@ -53,6 +54,55 @@
             <!-- <div class="menu">
                     <label for="chk1"><i class="fa fa-bars"></i></label>
             </div> -->
+
     </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+            
+         
+                          
+    <div class="listphim"><h2>DANH SÁCH PHIM YÊU THÍCH</h2> </div>
+    <br>
+    <div class="wrapper"> 
+    <?php
+        if (!empty($dsphimyeuthich)) {
+            foreach ($dsphimyeuthich as $Phim) {
+                ?>
+                <div class="box">
+                    <a href="/user/detail/<?= $Phim['MaPhim'] ?>"><i class="fas fa-play"></i></a>
+                    <img class="" src="<?php echo '../'. $Phim["Anh"]?>" alt="">
+                    <h4><?php echo $Phim["TenPhim"]?></h4>
+                </div>
+                <?php 
+            }
+        } else {
+            ?>
+            <p>khong có phim nào</p>
+            <?php
+        }
+            ?>
+
+
+    </div>
+
+    <div class="footer">
+        <div class="footer_">
+        <a><i class="fas fa-laptop-code"></i> Nguyễn Khánh Huy</a> <br>
+        <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vs</a></p>
+        </div>
+<div class="footer_">
+        <a><i class="fas fa-palette"></i> Hoàng Thị Lin</a> <br>
+  <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vs</a></p>
+</div>
+<div class="footer_">
+    <a><i class="fas fa-database"></i> Hoànng Trọng Quốc Tiến</a> <br>
+  <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vs</a></p>
+</div>
+</div>
+
+    <script src="../../js/app.js"></script>
 </body>
 </html>
