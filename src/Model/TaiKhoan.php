@@ -51,6 +51,15 @@ class TaiKhoan {
         return $this->mysqli->query("INSERT INTO taikhoan (TaiKhoan, MatKhau, SoDienThoai) VALUES ('$tendn', '$matkhau', '$sodt')");
         
     }
+    public function DoiMatKhau($Id, $matkhaumoi){
+        $Id = $this->mysqli->real_escape_string($Id);
+        $matkhaumoi = $this->mysqli->real_escape_string($matkhaumoi);
+    
+    
+        return $this->mysqli->query("UPDATE taikhoan set MatKhau='$matkhaumoi' where Id= '$Id'");
+        
+    }
+
 }
 
 

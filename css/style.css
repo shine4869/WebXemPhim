@@ -604,3 +604,28 @@ padding-top: 100px;
   color: #ffcc00; 
   margin: 5px;
 }
+.dropmenu1 {
+  background: #0b0a0a;
+  position: absolute;
+  top: 75%; 
+  left: 80%;
+  width: auto; 
+  min-width: 150px;
+  max-height: 120px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: none; 
+}
+
+.dropmenu1 li {
+  padding: 10px;
+  flex: 1; 
+  color: #fff;
+  font-size: 13px;
+}
+
+header ul li:hover .dropmenu1 {
+  display: flex;
+}

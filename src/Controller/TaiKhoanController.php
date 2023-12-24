@@ -32,6 +32,11 @@ class TaiKhoanController extends Controller
         $this->render('users\register', ['loai'=> $loai]);
     }
 
+    public function changepassword(){
+        $loai = $this->loai->getLoai();
+        $this->render('users\changepassword', ['loai'=> $loai ]);
+    }
+
     public function logout(){
         if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             session_start();

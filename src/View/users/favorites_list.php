@@ -41,7 +41,14 @@
                         session_start();
                             if(isset($_SESSION['currentUser'])) {
                         ?>
-                            <li><a href="#"><i class="fa fa-user"></i> <?php echo  $_SESSION['us'] ?></a></li>
+                            <li>
+                                <a href="#"><i class="fa fa-user"></i> <?php echo  $_SESSION['us'] ?></a>
+
+                                <ul class="dropmenu1">
+                                <li><a href="/user/doimatkhau/<?php echo  $_SESSION['us'] ?>"> Đổi Mật Khẩu</a></li>
+                                </ul>
+
+                            </li>
                             <li><a href="/user/logout"><i class="fa-solid fa-right-from-bracket"></i> ĐĂNG XUẤT</a></li>
                         <?php } else {?>
                             <li><a href="/user/login"><i class="fa fa-sign-in"></i>  ĐĂNG NHẬP</a></li>
