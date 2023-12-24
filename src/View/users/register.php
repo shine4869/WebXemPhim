@@ -40,7 +40,7 @@
                             <a href="#"><i class="far fa-list-alt"></i> THỂ LOẠI</a>
                             <ul class="drop-menu">
                             <?php foreach ($loai as $Loai){?> 
-                                    <li><a href="#"><?php echo $Loai["TenLoai"]?></a></li>
+                              <li><a href="/user/phimtheoma/<?= $Loai["MaLoai"] ?>"> <?php echo $Loai["TenLoai"]?> </a></li>
                             <?php }?> 
                                     
                             </ul>
@@ -87,7 +87,7 @@
             <p class="desc">Already have an acount? <a href="/user/login"> Login</a>❤️</p>
     </form>       
     <script src="../../js/app.js"></script>
-  
+    
 </body>
 
 </html>

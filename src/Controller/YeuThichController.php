@@ -15,7 +15,7 @@ class YeuThichController extends Controller{
             $id= $user['Id'];
             $ktr= (new YeuThich())->getphimdayeuthich($maphim,$id);
             if($ktr){
-                $_SESSION['thongbao'] = "phim da duoc them truoc do roi";
+                $_SESSION['thongbao'] = "Phim đã có trong danh sách yêu thích!";
                     header("Location: ../detail/$maphim");
                     exit();
             }
@@ -23,7 +23,7 @@ class YeuThichController extends Controller{
                 $them = (new YeuThich())->ThemYeuThich($id,$maphim);
                 if($them){
 
-                    $_SESSION['thongbao'] = "phim da duoc them thanh cong";
+                    $_SESSION['thongbao'] = "Đã thêm vào danh sách yêu thích!";
                     header("Location: /user/detail/$maphim");
                     exit();
                 }

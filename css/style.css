@@ -504,6 +504,10 @@ header ul li:hover .drop-menu {
   margin: 20px 0 20px 0;
   color: #333;
 }
+.detail_content h6{
+  margin: 0 0 0 20px;
+  color: #de2626;
+}
 .detail_content h2{
   margin: 20px 0 0 0;
   color: #c3c1bb;
@@ -518,7 +522,7 @@ header ul li:hover .drop-menu {
 }
 .Evaluate i{
   padding: 2.5px;
-    color: #cb9e0b;
+  color: #cb9e0b;
 }
 
 .detail-img img {
@@ -533,13 +537,14 @@ header ul li:hover .drop-menu {
  
 }
 .detail_content p {
-height: 290px;
+height: 280px;
 color: #c3c1bb;
  line-height: 1.5;
  font-size: 18px;
  
 }
 .detail-icon {
+  margin:  7px 0 0 0 ;
   display: flex;
   position: absolute;
   text-align: center;
@@ -548,7 +553,7 @@ color: #c3c1bb;
 
 .detail-icon a {
   background: #0a0a0a;
-  margin: 3px;
+  margin: 0 5px 0 0 ;
   padding: 8px 15px;
   border: 1px solid #fff;
   cursor: pointer;
@@ -588,4 +593,14 @@ color: #c3c1bb;
 
 .footer i {
   margin-right: 5px;
+}
+
+/* TRANG YÊU THÍCH */
+
+.favorites{
+padding-top: 100px;
+}
+.favorites h2{
+  color: #ffcc00; 
+  margin: 5px;
 }

@@ -29,7 +29,7 @@
                             <a href="#"><i class="far fa-list-alt"></i> THỂ LOẠI</a>
                             <ul class="drop-menu">   
                             <?php foreach ($loai as $Loai){?> 
-                                    <li><a href="#"><?php echo $Loai["TenLoai"]?></a></li>
+                                <li><a href="/user/phimtheoma/<?= $Loai["MaLoai"] ?>"> <?php echo $Loai["TenLoai"]?> </a></li>
                             <?php }?>        
                                     
                             </ul>
@@ -68,7 +68,6 @@
     if(isset($_SESSION['flash_message'])) {
         $message = $_SESSION['flash_message'];
         unset($_SESSION['flash_message']);
-        echo $message . '<br>';
         ?>
         <script>
             window.alert("<?php echo $message; ?>");

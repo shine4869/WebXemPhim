@@ -8,22 +8,23 @@ use TaiKhoan ;
 
 class DangXuatController extends Controller {
     private $Loai;
+    private $Newphim;
     private $Phim ;
     
     public function __construct(){
         $this->Phim = new Phim();
         $this->Loai = new LoaiPhim();
-        
     }
 
     public function logout(){
         $phim =$this->Phim->getPhim();
         $loai = $this->Loai->getLoai();
+        $newphim=$this->Phim->getPhimtheonew();
         session_start();
         if(isset($_SESSION['currentUser'])){
             unset($_SESSION['currentUser']);
                 session_destroy();
-                $this->render('users\home', ['phim' => $phim, 'loai'=> $loai]);
+                $this->render('users\home', ['phim' => $phim, 'loai'=> $loai, 'newphim' => $newphim]);
+            }
         }
     }
-}

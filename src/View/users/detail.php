@@ -29,7 +29,7 @@
                             <a href="#"><i class="far fa-list-alt"></i> THỂ LOẠI</a>
                             <ul class="drop-menu">
                             <?php foreach ($loai as $Loai){?> 
-                                    <li><a href="#"><?php echo $Loai["TenLoai"]?></a></li>
+                                <li><a href="/user/phimtheoma/<?= $Loai["MaLoai"] ?>"> <?php echo $Loai["TenLoai"]?> </a></li>
                             <?php }?>  
                                
                             </ul>
@@ -65,6 +65,7 @@
                 <h2>Nội dung:</h2>
                 <div class="content"><p><?php echo $ctphim['NoiDung'] ?></p></div>   
                 <h4>Lượt xem:230.000.200 lượt</h4>
+                             
                 <div class="Evaluate">
                 <h3>Đánh giá: </h3>
                 <i class="fas fa-star"></i>
@@ -73,16 +74,13 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 </div>
+                <h6 id="thongbao"></h6>  
                 <div class="detail-icon">
-                    <a href="/user/xemphim/<?=$ctphim['MaPhim'] ?>"><i class="fas fa-play"></i> Xem ngay</a>  
-                   <?php if(isset($_SESSION['thongbao']))     ?>                                     
-                        <a href="/user/themyeuthich/<?=$ctphim['MaPhim'] ?>"><i class="fa-regular fa-plus"></i>Danh sách </a>                
-                        
-                                    
-                        
-                                
+                <a href="/user/xemphim/<?=$ctphim['MaPhim'] ?>"><i class="fas fa-play"></i> Xem ngay</a>                                                         
+                <a href="/user/themyeuthich/<?=$ctphim['MaPhim'] ?>"><i class="fa-regular fa-plus"></i>Danh sách </a>                
+                
                 </div>
-                </div>
+            </div>
                     
         </div>
     </div>
@@ -100,6 +98,21 @@
   <a ><i class="fas fa-envelope-open-text"></i>@husc.edu.vn</a></p>
 </div>
 </div>
-   
+<?php
+if (isset($_SESSION['thongbao'])) {
+    $message = $_SESSION['thongbao'];
+    unset($_SESSION['thongbao']);
+?>
+    <script>
+        var notify = document.getElementById("thongbao");
+        notify.innerHTML ='<?php echo $message; ?>';
+        setTimeout(function() {
+            notify.innerHTML ='';
+        }, 2000);
+    </script>
+<?php
+}
+?>               
 </body>
+
 </html>

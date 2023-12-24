@@ -69,7 +69,7 @@
                             <?php
                             foreach($newphim as $Phim){ ?>
                             <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="<?php echo '../' . $Phim["Anh"] ?>" alt="">
+                            <img class="movie-list-item-img" src="<?php echo '../'. $Phim["Anh"] ?>" alt="">
                             <span class="movie-list-item-title"><?php echo  $Phim["TenPhim"] ?></span>
                             <a class="movie-list-item-button" href="/user/detail/<?= $Phim['MaPhim'] ?>"> Watch</a>
                             </div>
