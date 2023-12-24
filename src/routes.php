@@ -11,6 +11,7 @@ use App\Router;
 use App\Controller\TaiKhoanController;
 use App\Controller\TimKiemController;
 use App\Controller\XemphimController;
+use App\Controller\XoaPhimController;
 use App\Controller\YeuThichController;
 use App\Model\Phim;
 use App\Model\TaiKhoan;
@@ -42,6 +43,8 @@ $router->addRoute('/\/user\/phimtheoma\/([^\/]+)/', [new LoaiPhimController(), '
 $router->addRoute('/\/user\/themyeuthich\/([^\/]+)/', [new YeuThichController(), 'ThemYeuThich']);
 
 $router->addRoute('/\/user\/getyeuthich\/([^\/]+)/', [new PhimYeuThichController(), 'getyeuthich']);
+
+$router->addRoute('/\/user\/xoa\/([^\/]+)/', [new XoaPhimController(), 'xoaphimyeuthich']);
 
 ?>
 

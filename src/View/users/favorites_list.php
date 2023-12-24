@@ -63,7 +63,7 @@
             foreach ($dsphimyeuthich as $Phim) {
                 ?>
                 <div class="box">
-                    <a href=""><i class="fas fa-times"></i></i></a>
+                    <a href="/user/xoa/<?= $Phim['MaPhim'] ?>"><i class="fas fa-times"></i></i></a>
                     <a href="/user/detail/<?= $Phim['MaPhim'] ?>"><i class="fas fa-play"></i></a>
                     <img class="" src="<?php echo '../'. $Phim["Anh"]?>" alt="">
                     <h4><?php echo $Phim["TenPhim"]?></h4>

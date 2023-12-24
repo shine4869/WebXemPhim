@@ -47,5 +47,12 @@ class YeuThich {
 
         return $result->fetch_assoc();
     }
+
+    public function xoaphimyeuthich($maphim,$id){
+        $id = $this->mysqli->real_escape_string($id);
+        $maphim = $this->mysqli->real_escape_string($maphim);
+        
+        return $this->mysqli->query("DELETE from lichsu where Id= '$id' and MaPhim='$maphim';");
+    }
 }
 ?>
