@@ -117,7 +117,7 @@
         // Xóa biến session sau khi sử dụng
         unset($_SESSION['dsphimtk']);
     }
-    if(isset($dsphimtheoloai)){
+    else if(isset($dsphimtheoloai)){
         foreach ($dsphimtheoloai as $Phim) {
             ?>
             <div class="box">
