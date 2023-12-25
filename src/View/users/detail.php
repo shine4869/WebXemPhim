@@ -45,7 +45,7 @@
                                 <a href="#"><i class="fa fa-user"></i> <?php echo  $_SESSION['us'] ?></a>
 
                                 <ul class="dropmenu1">
-                                <li><a href="/user/doimatkhau/<?php echo  $_SESSION['us'] ?>"> Đổi Mật Khẩu</a></li>
+                                <li><a href="/user/changepassword/"> Đổi Mật Khẩu</a></li>
                                 </ul>
 
                             </li>

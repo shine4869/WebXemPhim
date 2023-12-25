@@ -45,7 +45,7 @@
                                 <a href="#"><i class="fa fa-user"></i> <?php echo  $_SESSION['us'] ?></a>
 
                                 <ul class="dropmenu1">
-                                <li><a href="/user/doimatkhau/<?php echo  $_SESSION['us'] ?>"> Đổi Mật Khẩu</a></li>
+                                <li><a href="/user/changepassword/"> Đổi Mật Khẩu</a></li>
                                 </ul>
 
                             </li>
@@ -70,7 +70,7 @@
             foreach ($dsphimyeuthich as $Phim) {
                 ?>
                 <div class="box">
-                    <a href="/user/xoa/<?= $Phim['MaPhim'] ?>"><i class="fas fa-times"></i></i></a>
+                    <a href="/user/xoa/<?= $Phim['MaPhim'] ?>"><i class="fas fa-times"></i></a>
                     <a href="/user/detail/<?= $Phim['MaPhim'] ?>"><i class="fas fa-play"></i></a>
                     <img class="" src="<?php echo '../'. $Phim["Anh"]?>" alt="">
                     <h4><?php echo $Phim["TenPhim"]?></h4>

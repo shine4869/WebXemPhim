@@ -329,6 +329,22 @@ header ul li:hover .drop-menu {
   color: #fff; 
   z-index: 2; 
 }
+/* ///// */
+
+.box i.fas.fa-times{
+  position: absolute;
+  top: 7%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  font-size: 20px; 
+  color: rgb(224, 170, 20);
+  z-index: 2;
+  opacity: 0; 
+}
+
+.box:hover i.fas.fa-times{
+  opacity: 1; 
+}
 
 .box img {
   width: 100%;

@@ -23,31 +23,31 @@ class DoiMatKhauController extends Controller{
                             if(hash_equals($matkhaumoi,$matkhauxacnhan)){
                                 $ktr= (new TaiKhoan)->DoiMatKhau($id,$matkhaumoi);
                                 if($ktr){
-                                    $_SESSION['flash_message'] = "da doi mat khau thanh cong";
+                                    $_SESSION['flash_notification'] = "Đổi mật khẩu thành công!";
                                     header("Location: ../user/changepassword");
                                     exit();
                                 }
 
                             }else{
-                                $_SESSION['flash_message'] = "mat khau xac nhan khong dung";
+                                //$_SESSION['flash_message'] = "mat khau xac nhan khong dung";
                                 header("Location: ../user/changepassword");
                                 exit();
                             }
                         }
                         else{
-                            $_SESSION['flash_message'] = "mat khau khong dung";
+                            $_SESSION['flash_notification'] = "Mật khẩu củ không đúng!";
                             header("Location: ../user/changepassword");
                             exit();
                         }
     
                     }
-                }
-                         
             }
-            
+                         
         }
-        
+            
     }
+        
+}
 
 
 

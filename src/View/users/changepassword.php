@@ -64,7 +64,7 @@
         <label for="chk1"><i class="fa fa-bars"></i></label>
 </div> -->
 </header>
-    <form action="/user/doimatkhau" method="POST" class="form" id="form-1">
+    <form action="/user/doimatkhau" method="POST" class="form" id="form-3">
           <h3 class="heading">Đổi Mật Khẩu</h3>
           
           <div class="form-group">
@@ -74,12 +74,12 @@
           </div>
           <div class="form-group">
             <label for="password" class="form-label">Mật khẩu mới</label>
-            <input id="password" name="matkhaumoi" type="password" placeholder="Nhập mật khẩu mới" class="form-control">
+            <input id="changepasswordnew" name="matkhaumoi" type="password" placeholder="Nhập mật khẩu mới" class="form-control">
             <span class="form-message"></span>
           </div>
           <div class="form-group">
             <label for="password" class="form-label">Mật khẩu xác nhận</label>
-            <input id="password" name="matkhauxacnhan" type="password" placeholder="Nhập mật khẩu xác nhận" class="form-control">
+            <input id="confirmchangepasswordnew" name="matkhauxacnhan" type="password" placeholder="Nhập mật khẩu xác nhận" class="form-control">
             <span class="form-message"></span>
           </div>
 
@@ -89,9 +89,9 @@
     <script src="../../js/app.js"></script>
     <?php
     session_start();
-    if(isset($_SESSION['flash_message'])) {
-        $message = $_SESSION['flash_message'];
-        unset($_SESSION['flash_message']);
+    if(isset($_SESSION['flash_notification'])) {
+        $message = $_SESSION['flash_notification'];
+        unset($_SESSION['flash_notification']);
         ?>
         <script>
             window.alert("<?php echo $message; ?>");

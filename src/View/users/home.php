@@ -129,7 +129,7 @@
         }
         unset($dsphimtheoloai);
     }
-
+    
     else {
         foreach($phim as $Phim){
             ?>

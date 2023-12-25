@@ -1,9 +1,14 @@
     var form = document.getElementById("form-2");
     var form1 = document.getElementById("form-1");
+    var form3 = document.getElementById("form-3");
     var username = document.getElementById("usename");
     var sodienthoai = document.getElementById("sodienthoai");
     var password = document.getElementById("password");
     var confirmPassword = document.getElementById("confirmPassword");
+
+    var passwordnew = document.getElementById("changepasswordnew");
+    var confirmPasswordnew = document.getElementById("confirmchangepasswordnew");
+
     var errorMessage = document.getElementById("message");
     if(form !==null){
         form.addEventListener("submit", (e) => {
@@ -31,6 +36,24 @@
         }
         
     
+        if(errors.length > 0){
+            e.preventDefault();
+            errorMessage.toggleAttribute('hidden');
+            errorMessage.innerHTML = errors.join(', ');
+        }
+    })
+   }
+
+   if(form3!==null){
+    form3.addEventListener("submit", (e) => {
+        const errors = [];
+        if ( password.value.trim() === ""||passwordnew.value.trim() === ""||confirmPasswordnew.value.trim() === "") {
+            errors.push("Nhập đầy đủ thông tin!");
+        }else{
+          if(passwordnew.value.trim()!=confirmPasswordnew.value.trim() ){
+            errors.push("confirmPasswordnew không khớp!");
+          } 
+        }
         if(errors.length > 0){
             e.preventDefault();
             errorMessage.toggleAttribute('hidden');
